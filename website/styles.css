@@ -1,19 +1,44 @@
 
-html body {
+html, body {
   height: 100%;
-  width: 100%
+  width: 100%;
+  margin: 0
 }
 
 header {
-  height: 30%;
+  height: 20%;
   width: auto;
-  background: lightgreen
+  background: lightgreen;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 2px 0 black;
 }
 
 h1 {
-  text-align: center;
-  font-size: 10em;
-  color: white;
-  text-shadow: 1px 1px 0 black;
+  margin: 0;
+  font-size: 8em;
   font-family: Luminari
+}
+
+p {
+  font-size: 4em
+}
+
+.card {
+  background: lightgreen;
+  border-radius: 60px;
+  margin: auto;
+  text-align: center;
+  font-size: 3em;
+  color: white;
+  height: 60%;
+  width: 60%;
+}
+
+.requested-page {
+  display: none
+}
+
+article p {
+  font-size: 1em
 }
