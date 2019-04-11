@@ -27,7 +27,7 @@ h1 {
 p {
   font-size: 4em
 }
-/*
+
 section {
   width: 100%;
   height: 100%;
@@ -51,12 +51,16 @@ section {
 
 .currentCard {
   top: 35%;
-  z-index: 2;
+  z-index: 2
+}
+
+.flip {
+  animation: flip 4s
 }
 
 @keyframes flip {
-  from {transform: rotateX(0deg)};
-  to {transform: rotateX(90deg)};
+  from {z-index: 2};
+  to {z-index: 1};
 }
 
 .requested-page {
@@ -65,24 +69,4 @@ section {
 
 article p {
   font-size: 1em
-}
-*/
-
-article {
-  width: 100%;
-  height: 100%
-}
-
-section {
-  width: 900px;
-  height: 900px;
-  margin: 70% auto;
-  overflow-y: scroll;
-  --webkit-overflow-scrolling: touch;
-  --webkit-scroll-snap-points-y: repeat(900px);
-     --ms-scroll-snap-points-y: repeat(900px);
-         --scroll-snap-points-y: repeat(900px);
- --webkit-scroll-snap-type: mandatory;
-     --ms-scroll-snap-type: mandatory;
-         --scroll-snap-type: mandatory;
 }
