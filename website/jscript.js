@@ -39,13 +39,12 @@ articles.nodes.map((c, i) => {
       as the client moves up the y axis we will update the activated article node
       with the events current position
     */
-    }
     articles.nodes[i].style.transform = `translateY(${articles.clientY}px) rotateX(${articles.rotate}deg)`
     articles.flipCard()
   })
 
   c.addEventListener('touchend', (e) => {
-    // as the event ends we will switch the z-index of the current and next article nodes 
+    // as the event ends we will switch the z-index of the current and next article nodes
     articles.switchCard(i)
   })
 })
