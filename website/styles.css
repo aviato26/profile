@@ -54,13 +54,15 @@ section {
   z-index: 2
 }
 
-.flip {
-  animation: flip 4s
+.flipback {
+  animation: flip 4s ;
 }
 
 @keyframes flip {
-  from {z-index: 2};
-  to {z-index: 1};
+  --posY: 0;
+  --rotX: 0;
+  from {transform: translateY(var(--posY)px) rotateX(var(--rotX)deg)}
+  to {transform: translateY(0px) rotateX(0deg)}
 }
 
 .requested-page {
