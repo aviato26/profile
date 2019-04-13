@@ -54,8 +54,14 @@ section {
   z-index: 2
 }
 
+.dude {
+  --color: 0;
+  background: black;
+  opacity: var(--color);
+}
+
 .flipback {
-  animation: flip 4s ;
+  animation: flip 1s ;
 }
 
 @keyframes flip {
