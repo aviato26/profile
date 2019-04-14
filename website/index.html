@@ -2,14 +2,19 @@
 <html>
   <head>
     <title></title>
-    <link rel='stylesheet' href='styles.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='stylesheet' href='style.css' />
   </head>
-  <body>
-    <header>
+  <body class='grid-container'>
+    <header class='header'>
       <h1>S D</h1>
       <p>Dude who likes web dev</p>
     </header>
-    <section>
+    <section class='main'>
+      <nav>
+        <p>Projects</p>
+        <p>About</p>
+      </nav>
       <article class='card currentCard'>
         <h2>Projects</h2>
         <p>Some of my recent projects</p>
@@ -18,9 +23,23 @@
         <h2>About</h2>
         <p>my journey so far</p>
       </article>
-      <section class='dude'>
-        <h2>Yo dude</h2>
-      </section>
+      <section class='infoContainer'>
+        <div class='projects'>
+          <h2>Projects</h2>
+          <span>Projects by a dude</span>
+        </div>
+        <div class='about'>
+          <h2>About</h2>
+          <span>About a dude</span>
+        </div>
+        <div class='PLP'>
+          <h2>Projects</h2>
+          <p>Dis be my projects</p>
+        </div>
+        <div class='ALP'>
+          <h2>About</h2>
+        </div>
+      </div>
     </section>
     <script src='jscript.js'></script>
   </body>

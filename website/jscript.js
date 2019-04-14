@@ -22,14 +22,12 @@ let articles = {
   },
   flipCard(){
     /*
-      mobile touchmove events seem to have a lag
-      so i increased the rotate velocity to 50 instead of 3
+      if the client swipes over the articles element the card will start to flip
+      and the velocity (adding 5 for velocity) will be added to the flip speed
     */
-    return (this.clientY < 10) ? this.rotate+=50 : this.rotate = 0
+    return (this.clientY < 0) ? this.rotate+=5 : this.rotate = 0
   }
 }
-
-let section = document.querySelector('.dude');
 
 articles.nodes.map((c, i) => {
   c.addEventListener('touchstart', (e) => {
@@ -37,9 +35,9 @@ articles.nodes.map((c, i) => {
   })
 
   c.addEventListener('touchmove', (e) => {
-    articles.clientY = e.changedTouches[0].clientY - e.changedTouches[0].screenY - 400;
+    articles.clientY = e.changedTouches[0].clientY - e.changedTouches[0].screenY - 100;
     articles.clientX = e.changedTouches[0].clientX - window.innerWidth / 2;
-    
+
     /*
       as the client moves up the y axis we will update the activated article node
       with the events current position
@@ -59,4 +57,34 @@ articles.nodes.map((c, i) => {
     //after animation ends resetting position
     c.style.transform = 'translateY(0px) rotateX(0deg)'
   })
+})
+
+// events for hover in desktop mode
+
+let navbar = document.querySelector('nav');
+let selectedPage = document.querySelector('.infoContainer');
+
+navbar.addEventListener('mousemove', (e) => {
+    if(e.path[0].textContent === 'Projects' && selectedPage.childNodes[5].style.display !== 'block'){
+      selectedPage.childNodes[1].style.display = 'block';
+      selectedPage.childNodes[1].className = 'projects transition'
+    } else if(e.path[0].textContent === 'About' && selectedPage.childNodes[7].style.display !== 'block'){
+      selectedPage.childNodes[3].style.display = 'block'
+      selectedPage.childNodes[3].className = 'about transition'
+    } else {
+      selectedPage.childNodes[1].style.display = 'none';
+      selectedPage.childNodes[3].style.display = 'none'
+    }
+})
+
+navbar.addEventListener('click', (e) => {
+  if(e.path[0].textContent === 'Projects' && selectedPage.childNodes[7].style.display !== 'block'){
+    selectedPage.childNodes[1].style.display = 'none'
+    selectedPage.childNodes[5].style.display = 'block'
+    selectedPage.childNodes[5].className = 'transition'
+  } else if(e.path[0].textContent === 'About' && selectedPage.childNodes[5].style.display !== 'block'){
+    selectedPage.childNodes[3].style.display = 'none'
+    selectedPage.childNodes[7].style.display = 'block'
+    selectedPage.childNodes[7].className = 'transition'
+  }
 })
