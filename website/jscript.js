@@ -78,13 +78,22 @@ navbar.addEventListener('mousemove', (e) => {
 })
 
 navbar.addEventListener('click', (e) => {
-  if(e.path[0].textContent === 'Projects' && selectedPage.childNodes[7].style.display !== 'block'){
-    selectedPage.childNodes[1].style.display = 'none'
-    selectedPage.childNodes[5].style.display = 'block'
-    selectedPage.childNodes[5].className = 'transition'
-  } else if(e.path[0].textContent === 'About' && selectedPage.childNodes[5].style.display !== 'block'){
-    selectedPage.childNodes[3].style.display = 'none'
-    selectedPage.childNodes[7].style.display = 'block'
-    selectedPage.childNodes[7].className = 'transition'
+  let path = e.path[0].textContent;
+  
+ /*
+ checks if the projects or about buttons are hovered over or clicked
+ and reassigns the transition class
+ */
+
+  if(path === 'Projects'){
+    selectedPage.childNodes[7].style.display = 'none';
+    selectedPage.childNodes[1].style.display = 'none';
+    selectedPage.childNodes[5].style.display = 'block';
+    selectedPage.childNodes[5].className = 'transition';
+  } else if(path === 'About'){
+    selectedPage.childNodes[5].style.display = 'none';
+    selectedPage.childNodes[3].style.display = 'none';
+    selectedPage.childNodes[7].style.display = 'block';
+    selectedPage.childNodes[7].className = 'transition';
   }
 })

@@ -19,10 +19,10 @@ nav {
   grid-area: header;
   text-align: center;
   margin: 0;
-  background: lightgreen;
+  background-image: linear-gradient(to top, lightgreen, green);
   text-align: center;
   color: white;
-  text-shadow: 1px 2px 0 black;
+  text-shadow: 3px 2px 0 black;
   font-size: 1em;
   border-bottom: 3px solid black;;
   font-family: Luminari;
@@ -102,6 +102,7 @@ h1 {
   nav {
     display: block;
     background: lightgreen;
+    box-shadow: 10px 0px 15px black;
     border-right: 2px solid black;
     text-align: center;
   }
@@ -146,6 +147,10 @@ h1 {
     display: block;
     opacity: 1;
     animation: fadein 1s forwards;
+  }
+
+  img {
+    width: 30%;
   }
 
   @keyframes fadein {
