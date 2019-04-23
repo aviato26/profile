@@ -22,10 +22,10 @@ nav {
   grid-area: header;
   text-align: center;
   margin: 0;
-  background-image: linear-gradient(lightgreen 74%, darkgreen 121%);
+  background-image: linear-gradient(lightgreen 63%, darkgreen 108%);
   text-align: center;
   color: white;
-  text-shadow: 3px 2px 0 black;
+  text-shadow: 0px -6px 0 black;
   font-size: 1em;
   font-family: sans-serif;
   z-index: 4;
@@ -34,6 +34,7 @@ nav {
 h1 {
   margin: 0;
   font-family: 'Comic Sans MS';
+  text-shadow: 0px 2px 0 darkgreen;
 }
 
 .main {
