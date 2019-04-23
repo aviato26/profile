@@ -5,12 +5,12 @@ let articles = {
   clientX: 0,
   rotate: 0,
   flipped: false,
+  activeCard: 0,
   switchCard(int){
     if(this.clientY < -30){
       this.nodes.forEach((c, i) => {
         if(c.className === 'card currentCard'){
           c.className = 'card flipback'
-          //c.style.transform = 'translateY(0px)'
           c.style.setProperty('--posY', this.clientY)
           c.style.setProperty('--rotX', this.rotate)
         } else if(c.className === 'card'){
@@ -32,14 +32,14 @@ let articles = {
 
 let navbar = document.querySelector('nav');
 let selectedPage = document.querySelector('.infoContainer');
-let mobileContainer = document.querySelector('.mobile-active');
+let mobileContainer = document.querySelectorAll('.mobile-active');
 
 // events for hover in desktop mode
 
 articles.nodes.map((c, i) => {
   c.addEventListener('touchstart', (e) => {
+    articles.activeCard = i;
     articles.flipped = false;
-    mobileContainer.className = 'mobile-container'
   })
 
   c.addEventListener('touchmove', (e) => {
@@ -61,6 +61,10 @@ articles.nodes.map((c, i) => {
     // created flipped key so when card is touched the switchCard method will not fire until touchmove event is activated
     if(articles.flipped){
        articles.switchCard(i)
+    } else {
+      // once the card is clicked and not flipped that cards modal window will display
+      
+      mobileContainer[i].className = 'mobile-container'
     }
   })
 
@@ -97,4 +101,13 @@ navbar.addEventListener('click', (e) => {
     selectedPage.childNodes[5].style.display = 'block';
     selectedPage.childNodes[5].className = 'transition';
   }
+})
+
+// event listener to close the modal window
+mobileContainer.forEach((c, i) => {
+  c.addEventListener('touchstart', (e) => {
+    if(e.target.textContent === 'X'){
+      c.className = 'mobile-active'
+    }
+  })
 })
