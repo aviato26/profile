@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 */
 
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Unicase');
+
 html, body{
   width: 100%;
   height: 100%;
@@ -21,6 +23,8 @@ nav {
   width: 100%;
   grid-area: header;
   text-align: center;
+  display: flex;
+  justify-content: center;
   margin: 0;
   background-image: linear-gradient(lightgreen 63%, darkgreen 108%);
   text-align: center;
@@ -31,10 +35,27 @@ nav {
   z-index: 4;
 }
 
+.logo {
+  background-image: url(logo-01.svg);
+  background-repeat: no-repeat;
+  background: contain;
+  width: 10%;
+  text-align: center;
+}
+
+.cardLogo {
+  background-image: url(logo-01.svg);
+  background-repeat: no-repeat;
+  background: contain;
+  width: 50%;
+  height: 50%;
+  margin: 37% auto;
+}
+
 h1 {
   margin: 0;
-  font-family: 'Comic Sans MS';
-  text-shadow: 0px 2px 0 darkgreen;
+  font-family: "Comic Sans MS", 'cursive', serif;
+  text-shadow: 0px 2px 0 black;
 }
 
 .main {
@@ -43,11 +64,12 @@ h1 {
 
 .contactCard {
   position: absolute;
-  background: lightgreen;
-  border-radius: 60px;
+  background: seashell;
+  font-family: 'Cormorant Unicase', serif;
+  border-radius: 30px;
   border: 4px solid black;
   text-align: center;
-  color: white;
+  color: black;
   height: 50%;
   width: 60%;
   box-shadow: 2px 15px 58px black;
@@ -58,11 +80,12 @@ h1 {
 
 .card {
   position: absolute;
-  background: lightgreen;
-  border-radius: 60px;
+  background: seashell;
+  font-family: 'Cormorant Unicase', serif;
+  border-radius: 30px;
   border: 4px solid black;
   text-align: center;
-  color: white;
+  color: black;
   height: 50%;
   width: 60%;
   box-shadow: 2px 15px 58px black;
@@ -85,19 +108,34 @@ h1 {
   height: 100vh;
   text-align: center;
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.99);
+  background-color: rgba(255, 245, 238, 0.99);
   overflow: scroll;
   z-index: 5;
   font-size: 1.3em
 }
 
-.mobile-container h2{
-  text-decoration: underline;
-  color: green
+.mobile-container h2 {
+  font-family: 'Cormorant Unicase', serif;
+}
+
+.mobile-container h3 {
+  font-family: cursive;
 }
 
 .mobile-active {
   display: none
+}
+
+.mobile-container div img {
+  box-shadow: 1px 6px 25px black
+}
+
+.cardInnerBorder {
+  width: 60%;
+  height: 60%;
+  margin: auto;
+  border: 2px solid green;
+  background: white
 }
 
 img {
@@ -139,7 +177,7 @@ img {
   .header {
     position: static;
     box-shadow: 1px 5px 20px black;
-    font-size: 1.8em
+    font-size: 1.8em;
   }
 
   .main {
@@ -153,11 +191,25 @@ img {
 
   nav {
     display: block;
-    background: lightgreen;
     box-shadow: 10px 0px 15px black;
     border-right: 2px solid black;
     text-align: center;
-    background-image: linear-gradient(to left, darkgreen -15%, lightgreen 26%)
+    background-image: linear-gradient(to left, darkgreen -15%, lightgreen 26%);
+    z-index: 2;
+    position: relative;
+  }
+
+  .leaf {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(leaf_floral_floral.svg);
+    fill: none;
+    stroke: red;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   nav p {
@@ -166,6 +218,8 @@ img {
     margin: 20% auto;
     font-size: 2em;
     border: 2px solid black;
+    position: relative;
+    z-index: 2;
     border-radius: 90px;
     background: white;
     box-shadow: 1px 1px 8px black;
@@ -183,14 +237,26 @@ img {
   }
 
   .infoContainer {
+    font-size: 1.3em;
     display: block;
     text-align: center;
+    overflow: scroll;
+    padding: 0 8px
   }
 
   .infoContainer h2 {
     font-size: 2em;
-    font-family: cursive;
+    font-family: 'Cormorant Unicase', serif;
     text-decoration: underline;
+  }
+
+  .infoContainer h3 {
+    font-size: 1.4em;
+    font-family: 'Comic Sans MS', serif;
+  }
+
+  .infoContainer img {
+    box-shadow: 0 6px 25px black
   }
 
   .projects, .about, .contact, .contactCard{
