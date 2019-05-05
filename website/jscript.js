@@ -30,6 +30,7 @@ let articles = {
   }
 }
 
+// var for traversing upon events
 let navbar = document.querySelector('nav');
 let selectedPage = document.querySelector('.infoContainer');
 let mobileContainer = document.querySelectorAll('.mobile-active');
@@ -63,7 +64,7 @@ articles.nodes.map((c, i) => {
        articles.switchCard(i)
     } else {
       // once the card is clicked and not flipped that cards modal window will display
-      
+
       mobileContainer[i].className = 'mobile-container'
     }
   })
@@ -78,7 +79,6 @@ articles.nodes.map((c, i) => {
 
 navbar.addEventListener('click', (e) => {
   let path = e.path[0].textContent;
-
  /*
  checks if the projects or about buttons are hovered over or clicked
  and reassigns the transition class
@@ -87,17 +87,20 @@ navbar.addEventListener('click', (e) => {
   if(path === 'Projects'){
     selectedPage.childNodes[3].style.display = 'none';
     selectedPage.childNodes[5].style.display = 'none';
+    selectedPage.childNodes[7].style.display = 'none';
     selectedPage.childNodes[1].style.display = 'block';
     selectedPage.childNodes[1].className = 'transition';
   } else if(path === 'About'){
     selectedPage.childNodes[1].style.display = 'none';
     selectedPage.childNodes[5].style.display = 'none';
+    selectedPage.childNodes[7].style.display = 'none';
     selectedPage.childNodes[3].style.display = 'block';
     selectedPage.childNodes[3].className = 'transition';
   }
   else if(path === 'Contact'){
     selectedPage.childNodes[1].style.display = 'none';
     selectedPage.childNodes[3].style.display = 'none';
+    selectedPage.childNodes[7].style.display = 'none';
     selectedPage.childNodes[5].style.display = 'block';
     selectedPage.childNodes[5].className = 'transition';
   }
@@ -110,4 +113,30 @@ mobileContainer.forEach((c, i) => {
       c.className = 'mobile-active'
     }
   })
+})
+
+
+// submitting form data to server
+let contactFormSubmit = document.querySelector('form button');
+let emailFromForm = document.querySelector('form input');
+let messageFromForm = document.querySelector('form textarea')
+let form = document.querySelector('form');
+
+contactFormSubmit.addEventListener('click', (e) => {
+  e.preventDefault()
+  fetch('http://localhost:5000', {
+    headers:{
+      "Content-Type": "application/json"
+    },
+    mode: "cors",
+    method: "POST",
+    body: JSON.stringify({
+      email: emailFromForm.value,
+      message: messageFromForm.value
+    })
+  })
+  .then(data => {
+    console.log(data)
+  })
+  form.reset()
 })
