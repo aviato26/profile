@@ -212,20 +212,19 @@ img {
     background: seashell;
     z-index: 2;
     position: relative;
+    background-image: url(leaf_floral_floral.svg);
+    fill: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
   }
 
-  .leaf {
+  .floral {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url(leaf_floral_floral.svg);
-    fill: none;
-    stroke: red;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
   }
 
   nav p {
@@ -258,7 +257,11 @@ img {
     text-align: center;
     overflow: scroll;
     padding: 0 8px;
+    background-image: url('floralbackground.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
   }
+/* 1104.4 1606.7 */
 
   .infoContainer h2 {
     font-size: 2em;
@@ -310,6 +313,11 @@ img {
   form button {
     width: 10%;
     height: 30px
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
   }
 
   #mobile-container {
