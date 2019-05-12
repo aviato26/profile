@@ -7,7 +7,7 @@
 html, body{
   width: 100%;
   height: 100%;
-  margin: 0
+  margin: 0;
 }
 
 nav {
@@ -21,17 +21,16 @@ nav {
 .header {
   position: fixed;
   width: 100%;
-  grid-area: header;
+  height: 10%;
   text-align: center;
   display: flex;
   justify-content: center;
   margin: 0;
-  background-image: linear-gradient(lightgreen 63%, darkgreen 108%);
-  background: seashell;
-  color: indianred;
-  font-size: 1em;
+  color: #d3c090;
+  font-size: 1.2em;
   font-family: 'Cormorant Unicase', serif;
   z-index: 4;
+  background-image: url(headerDesign.svg)
 }
 
 .logo {
@@ -160,9 +159,6 @@ img {
 
 @media only screen and (min-width: 500px){
 
-  .logo {
-    width: 6%;
-  }
 }
 /*
   desktop layout
@@ -183,8 +179,13 @@ img {
 
   .header {
     position: static;
+    width: 100%;
+    height: 100%;
+    grid-area: header;
+    background-color: #350D1B;
     box-shadow: 1px 5px 20px black;
-    font-size: 2em;;
+    font-size: 2.3em;
+    z-index: 0;
   }
 
   h1 {
@@ -206,25 +207,16 @@ img {
 
   nav {
     display: block;
-    box-shadow: 10px 0px 15px black;
+    box-shadow: 10px 20px 15px black;
     border-right: 2px solid black;
     text-align: center;
-    background: seashell;
+    background: #350D1B;
     z-index: 2;
     position: relative;
-    background-image: url(leaf_floral_floral.svg);
-    fill: none;
-    background-repeat: no-repeat;
+    background-image: url(navbarbackground.svg);
     background-size: contain;
+    background-repeat: no-repeat;
     background-position: bottom;
-  }
-
-  .floral {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
   }
 
   nav p {
@@ -252,16 +244,15 @@ img {
   }
 
   .infoContainer {
-    font-size: 1.3em;
+    font-size: 1.5em;
     display: block;
     text-align: center;
     overflow: scroll;
-    padding: 0 8px;
+    padding: 0 8%;
     background-image: url('floralbackground.svg');
     background-repeat: no-repeat;
     background-size: contain;
   }
-/* 1104.4 1606.7 */
 
   .infoContainer h2 {
     font-size: 2em;
@@ -275,7 +266,8 @@ img {
   }
 
   .infoContainer img {
-    box-shadow: 0 6px 25px black
+    box-shadow: 0 6px 25px black;
+    width: 40%;
   }
 
   .projects, .about, .contact, .contactCard{
@@ -287,17 +279,20 @@ img {
     display: block;
     opacity: 1;
     animation: fadein 1s forwards;
-    overflow: scroll;
+    overflow: initial;
     height: 100vh;
   }
 
   .transition #rose {
     opacity: 0.3;
     height: 10%;
+    display: block;
+    margin: auto;
   }
 
   #rose {
-    box-shadow: none
+    box-shadow: none;
+    display: none;
   }
 
   img {
@@ -313,11 +308,6 @@ img {
   form button {
     width: 10%;
     height: 30px
-  }
-
-  svg {
-    width: 100%;
-    height: auto;
   }
 
   #mobile-container {
