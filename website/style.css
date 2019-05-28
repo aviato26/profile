@@ -126,6 +126,18 @@ h1 {
   box-shadow: 1px 6px 25px black
 }
 
+.mobile-container p {
+  padding: 5%
+}
+
+.mobile-container #rose {
+  opacity: 0.3;
+  height: 10%;
+  display: block;
+  margin: auto;
+  box-shadow: none
+}
+
 .cardInnerBorder {
   width: 60%;
   height: 60%;

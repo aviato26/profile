@@ -114,29 +114,3 @@ mobileContainer.forEach((c, i) => {
     }
   })
 })
-
-
-// submitting form data to server
-let contactFormSubmit = document.querySelector('form button');
-let emailFromForm = document.querySelector('form input');
-let messageFromForm = document.querySelector('form textarea')
-let form = document.querySelector('form');
-
-contactFormSubmit.addEventListener('click', (e) => {
-  e.preventDefault()
-  fetch('http://localhost:5000', {
-    headers:{
-      "Content-Type": "application/json"
-    },
-    mode: "cors",
-    method: "POST",
-    body: JSON.stringify({
-      email: emailFromForm.value,
-      message: messageFromForm.value
-    })
-  })
-  .then(data => {
-    console.log(data)
-  })
-  form.reset()
-})
