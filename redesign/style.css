@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Nixie+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Unicase');
 
 body, html {
   margin: 0;
@@ -42,6 +43,16 @@ li {
   font-size: 2em;
 }
 
+img {
+  box-shadow: 0 6px 25px black;
+  width: 40%;
+}
+
+h3 {
+  font-size: 1.4em;
+  font-family: 'Comic Sans MS', serif;
+}
+
 .typewriter {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid orange; /* The typwriter cursor */
@@ -75,18 +86,30 @@ li {
   height: 100%
 }
 
+h2 {
+  font-size: 2em;
+  font-family: 'Cormorant Unicase', serif;
+  text-decoration: underline;
+}
+
 .stage {
     height: 50%;
     width: 50%;
     position: absolute;
+    background-color: white;
     top: 25%;
     left: 50%;
     z-index: 0;
+    font-size: 1.5em;
+    display: block;
+    text-align: center;
+    overflow: scroll;
+    align-self: flex-end;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
   }
+
   .box {
-      align-self: flex-end;
-      animation-duration: 1.5s;
-      animation-iteration-count: 1;
       background-color: white;
       height: 100%;
       margin: 0 auto 0 auto;
